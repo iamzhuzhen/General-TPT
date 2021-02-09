@@ -3,8 +3,8 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import { createHashHistory } from "history";
 
 // compoments
-import Login from './pages/Login';
-import LandingPage from './pages/LandingPage'
+import Login from '@pages/Login';
+import LandingPage from '@pages/LandingPage'
 
 //
 const hashHistory = createHashHistory();

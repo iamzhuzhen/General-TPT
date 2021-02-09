@@ -71,9 +71,9 @@ const MenuExpandIcon = (props) => {
   return (
     <div onClick={iconClickHandler} onMouseOver={hoverSwitchIcon} onMouseOut={unhoverSwitchIcon} className={`leftNavSwitchIcon ${isTouchSwitchIcon ? 'bigIcon' : ''}`}>
       {props.isMenuExpand ? (
-        <i class="fa fa-chevron-left"></i>
+        <i className="fa fa-chevron-left"></i>
       ) : (
-          <i class="fa fa-chevron-right"></i>
+          <i className="fa fa-chevron-right"></i>
         )}
     </div>
   )
