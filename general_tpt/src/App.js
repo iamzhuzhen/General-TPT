@@ -14,9 +14,11 @@ function App() {
   return (
     <div className="App">
       <Router history={hashHistory}>
+        <Route exact path="/" >
+          <Redirect to='/login' />
+        </Route>
         <Route path="/login" component={Login} />
         <Route path='/pages' component={LandingPage} />
-        
       </Router>
     </div>
   );

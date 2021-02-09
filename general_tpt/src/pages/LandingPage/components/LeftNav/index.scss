@@ -1,0 +1,60 @@
+.LeftNav{
+  position:relative;
+  height:100%;
+  width:250px;
+  border-right:solid 1px #999;
+  background-color: green;
+  animation: menuBig 1s;
+
+
+  .leftNavSwitchIcon{
+    width:30px;
+    height:30px;
+    border-radius: 50%;
+    background: #fff;
+    border: solid 1px #333;
+    position: absolute;
+    top:50%;
+    right:0;
+    transform:translate(50%,-50%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    font-size: 12px;
+  }
+
+  .bigIcon{
+    width:50px;
+    height:50px;
+    font-size: 20px;
+    animation: iconBig 1s;
+  }
+
+
+
+
+}
+
+.collapseMenu{
+  width:80px;
+  animation: menuSmall 1s;
+}
+
+@keyframes iconBig
+{
+  0%   {width:30px;height:30px;font-size:12px;}
+  100% {width:50px;height:50px;font-size:20px;}
+}
+
+@keyframes menuSmall
+{
+  0%   {width:250px}
+  100% {width:80px;}
+}
+
+@keyframes menuBig
+{
+  0%   {width:80px}
+  100% {width:250px;}
+}
