@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 import './index.scss';
+import { startLoading, endLoading } from '@util/loading.js';
 
 
 const LoginForm = () => {
@@ -24,7 +25,7 @@ const LoginForm = () => {
       if (key == 'username') {
         document.querySelector(`[name='password']`).focus()
       } else if (key == 'password') {
-        document.querySelector(`[name='login']`).click()
+        checkAndJump()
       }
     }
   }
@@ -35,7 +36,13 @@ const LoginForm = () => {
     } else if (password.trim() == '') {
       return
     }
-    history.push('pages')
+    startLoading()
+    setTimeout(()=>{
+      history.push('/pages')
+      endLoading()
+      
+    },2000)
+   
   }
 
   return (
@@ -44,7 +51,7 @@ const LoginForm = () => {
       <span className="label">Username:</span>
       <input className="inputBox" value={username} name="username" onKeyDown={(e) => { keyDownHandler(e, 'username') }} onInput={(e) => { inputHandler(e, 'username') }}></input>
       <span className="label">Password:</span>
-      <input className="inputBox" value={password} name="password" type="password" onInput={(e) => { inputHandler(e, 'password') }}></input>
+      <input className="inputBox" value={password} name="password" onKeyDown={(e) => { keyDownHandler(e, 'password') }} type="password" onInput={(e) => { inputHandler(e, 'password') }}></input>
       <button name="login" onClick={checkAndJump}>Login</button>
     </div>
   );
