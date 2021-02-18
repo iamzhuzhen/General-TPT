@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 import './index.scss';
 import { startLoading, endLoading } from '@util/loading.js';
+// api 
+import * as UserAPI from '@/api/UserAPI.js'
 
 
 const LoginForm = () => {
@@ -37,12 +39,15 @@ const LoginForm = () => {
       return
     }
     startLoading()
-    setTimeout(()=>{
+    UserAPI.signIn({}).then(res => {
+      console.log(res)
+    })
+    setTimeout(() => {
       history.push('/pages')
       endLoading()
-      
-    },2000)
-   
+
+    }, 2000)
+
   }
 
   return (
